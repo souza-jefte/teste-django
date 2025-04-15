@@ -1,0 +1,6 @@
+#Ignorar arquivos e pastas especificos:
+__pycache__/
+migrations/
+media/cards/*.jpg
+*.sqlite3
+

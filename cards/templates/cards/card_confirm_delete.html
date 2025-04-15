@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titulo %} Excluir card{% endblock titulo %}
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'cards/css/card_delete.css' %}">
+{% endblock estilos %}
+
+
+{% block conteudo %}
+    <div class="form-container">
+        <h3>Tem certeza que deseja excluir "{{ card.nome }}"?</h3>
+
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit">Sim, excluir</button>
+        </form>
+
+        <a href="{% url 'exibir_cards' %}">Cancelar</a>
+        
+    </div>
+    
+
+{% endblock conteudo %}
+
+    
+
+

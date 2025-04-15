@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+    {% block titulo %}Adicionar/Editar Card{% endblock titulo %}
+    {% block estilos %}
+        <link rel="stylesheet" href="{% static 'cards/css/form.css' %}?v={% now  'U'  %}">
+    {% endblock estilos %}
+    
+
+{% block conteudo %}
+    <div class="form-container">
+        <h3>{% if form.instance.pk %}Editar Card{% else %}Criar Novo Card{% endif %}</h3>
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Salvar</button>
+        </form>
+    
+        <a href="{% url 'exibir_cards' %}">Voltar</a>
+
+    </div>
+    
+
+{% endblock conteudo %}

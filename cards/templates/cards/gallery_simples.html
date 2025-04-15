@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    {% load static %}  <!-- ADICIONE ESTA LINHA -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Cards</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    ddddddddddddddddddddd
+
+    <div class="search-box">
+        <input type="text" id="search" placeholder="Pesquisar por nome ou profissão..." onkeyup="filterCards()">
+    </div>
+
+    <div class="container" id="cardContainer">
+        <div class="card">
+            <img src="{% static 'imagens/pessoa1.jpg' %}" alt="Pessoa 1">
+            <h3>Ana Souza</h3>
+            <p>Engenheira</p>
+        </div>
+        <div class="card">
+            <img src="{% static 'imagens/pessoa2.jpg' %}" alt="Pessoa 2">
+            <h3>Lucas Mendes</h3>
+            <p>Desenvolvedor</p>
+        </div>
+        <div class="card">
+            <img src="{% static 'imagens/pessoa3.jpg' %}" alt="Pessoa 3">
+            <h3>Mariana Lima</h3>
+            <p>Designer</p>
+        </div>
+        <div class="card">
+            <img src="{% static 'imagens/pessoa4.jpg' %}" alt="Pessoa 4">
+            <h3>Pedro Henrique</h3>
+            <p>Médico</p>
+        </div>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

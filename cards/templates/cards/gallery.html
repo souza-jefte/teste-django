@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+    {% block titulo %} Galeria de Cards {% endblock titulo %}
+
+{% block conteudo %}
+
+    <div class="search-box">
+        <input type="text" id="search" placeholder="Pesquisar por nome ou profissão..." onkeyup="filterCards()">
+    </div>
+
+    <a href="{% url 'create_card' %}">Criar Novo Card</a>
+
+    <div class="container" id="cardContainer">
+        {% for card in cards %}
+        <div class="card">
+            {% if card.imagem %}
+                <img src="{{ card.imagem.url }}" alt="{{ card.nome }}">
+            {% else %}
+                <img src="{% static 'cards/imagens/default.jpg' %}" alt="Imagem padrão">
+            {% endif %}
+            <h3>{{ card.nome }}</h3>
+            <p>{{ card.profissao }}</p>
+            <a href="{% url 'edit_card' card.id %}">Editar</a>
+            <a href="{% url 'delete_card' card.id %}">Excluir</a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <script src="{% static 'cards/js/script.js' %}"></script>
+{% endblock conteudo %}
